@@ -160,7 +160,7 @@ uploadBtn.addEventListener("click", async () => {
     try {
       const fd = new FormData();
       fd.append("preserveFormat", preserveCheckbox.checked ? "1" : "0");
-      fd.append("file", entry.file); // per docs: key = "file"
+      fd.append("files", entry.file); // per docs: key = "file"
 
       // send to Worker /upload
       const resp = await fetch(API_PROXY + "/upload", {
@@ -277,3 +277,4 @@ function appendError(name, err){
 </script>
 </body>
 </html>
+
